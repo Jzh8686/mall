@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>上传页面</p>
+<form role="form" action="/good/upload" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="goodname">商品名称</label>
+        <input type="text" class="form-control" id="goodname"
+               placeholder="请输入名称" th:name="goodname">
+    </div>
+    <div class="form-group">
+        <label for="file">商品图片</label>
+        <input type="file" id="file" name="file">
+    </div>
+    <div class="form-group">
+        <label for="originprice">商品价格</label>
+        <input type="text" class="form-control" id="originprice"
+               placeholder="请输入名称" name="originprice">
+    </div>
+    <button type="submit" class="btn btn-default">提交</button>
+</form>
+
+</body>
+</html>

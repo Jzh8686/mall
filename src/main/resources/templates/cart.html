@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/custom.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:replace="header::header">
+</div>
+<div class="container" >
+    <div class="row" th:each="good:${cart}">
+        <div class="col-md-4" style="padding: 10px 10px 10px 10px">
+            <img th:src="@{'/img/'+${good.goodpicture}}" height="100%" width="100%"/>
+        </div>
+        <div class="col-md-8">
+            <p th:text="${good.goodname}"></p>
+            <p th:text="${good.originprice}"></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

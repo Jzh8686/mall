@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/custom.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<div th:replace="header::header"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-3" th:each="good:${goods}">
+            <div class="thumbnail">
+                <a th:href="@{'/item/'+${good.goodid}}">
+                    <img th:src="@{/img/{filename}(filename=${good.goodpicture})}"
+                         alt="通用的占位符缩略图"/>
+                </a>
+                <div class="caption">
+                    <p>一些示例文本。一些示例文本。</p>
+                    <p>
+                        <a th:href="@{'/item/'+${good.goodid}}" class="btn btn-primary" role="button"
+                           th:text="${good.goodname}">
+                            按钮
+                        </a>
+                        <a href="#" class="btn btn-default" role="button" th:text="${good.originprice}">
+                            加入购物车
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
